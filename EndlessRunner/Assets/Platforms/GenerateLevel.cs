@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GenerateLevel : MonoBehaviour
 {
-    public GameObject[] platforms;
+    
 
     GameObject dummy;
 
@@ -13,25 +13,25 @@ public class GenerateLevel : MonoBehaviour
         dummy = new GameObject("dummy");
 
         //Vector3 pos = new Vector3(0,0,0);
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 20; i++)
         {
-            int platformNumber = Random.Range(0, platforms.Length);
-            GameObject go =
-                Instantiate(platforms[platformNumber],
-                dummy.transform.position,
-                dummy.transform.rotation);
-
-            if (platforms[platformNumber].tag == "stairs")
+           
+            GameObject go = Pool.singelton.GetRandom();
+            if(go ==null) return;
+            go.SetActive(true);
+            go.transform.position = dummy.transform.position;
+            go.transform.rotation = dummy.transform.rotation;
+            if (go.tag == "stairs")
             {
                 dummy.transform.Translate(0, 5, 0);
             }
-            else if (platforms[platformNumber].tag == "downStairs")
+            else if (go.tag == "downStairs")
             {
                 dummy.transform.Translate(0, -5, 0);
                 go.transform.Rotate(new Vector3(0, 180, 0));
                 go.transform.position = dummy.transform.position;
             }
-            else if (platforms[platformNumber].tag == "T-Junction")
+            else if (go.tag == "T-Junction")
             {
                 if (Random.Range(0, 2) == 0)
                     dummy.transform.Rotate(new Vector3(0, 90, 0));

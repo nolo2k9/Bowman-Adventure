@@ -39,6 +39,7 @@
      <Compile Include="Assets\Platforms\GenerateLevel.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\moveCamera.cs" />
+     <Compile Include="Assets\pool.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.11f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -568,31 +569,31 @@
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.11f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>/Users/keithnolan/Desktop/EndlessRunner/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>/Users/keithnolan/Desktop/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>/Users/keithnolan/Desktop/EndlessRunner/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>/Users/keithnolan/Desktop/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>/Users/keithnolan/Desktop/EndlessRunner/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>/Users/keithnolan/Desktop/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>/Users/keithnolan/Desktop/EndlessRunner/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>/Users/keithnolan/Desktop/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>/Users/keithnolan/Desktop/EndlessRunner/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>/Users/keithnolan/Desktop/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-        <HintPath>/Users/keithnolan/Desktop/EndlessRunner/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+        <HintPath>/Users/keithnolan/Desktop/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>/Users/keithnolan/Desktop/EndlessRunner/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>/Users/keithnolan/Desktop/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>/Users/keithnolan/Desktop/EndlessRunner/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>/Users/keithnolan/Desktop/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>/Users/keithnolan/Desktop/EndlessRunner/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>/Users/keithnolan/Desktop/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
