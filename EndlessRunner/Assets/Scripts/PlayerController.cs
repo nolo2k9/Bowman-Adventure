@@ -5,15 +5,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Animator anim;
-
+    public static GameObject player;
     void Start()
     {
         anim = this.GetComponent<Animator>();
+        player = this.gameObject;
     }
 
     void StopAttacking()
     {
         anim.SetBool("isAttacking", false);
+       
     }
 
     // Update is called once per frame
@@ -23,19 +25,19 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isJumping", true);
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
             anim.SetBool("isJumping", false);
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        else if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             anim.SetBool("isAttacking", true);
         }
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+        else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             anim.SetBool("isAttacking", false);
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             this.transform.Rotate(Vector3.up * 90);
         }
