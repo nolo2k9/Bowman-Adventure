@@ -9,12 +9,26 @@ public class GenerateLevel : MonoBehaviour
     void Start()
     {
        
-       Vector3 position = new Vector3(0,0,0);
+       Vector3 pos = new Vector3(0,0,0);
        for (int i=0; i < 20; i++)
        {
            int platformNumber = Random.Range(0, platforms.Length);
-           Instantiate(platforms[platformNumber],position, Quaternion.identity);
-           position.z +=10;
+           GameObject go = Instantiate(platforms[platformNumber],pos, Quaternion.identity);
+         
+
+           if(platforms[platformNumber].tag =="stairs")
+           {
+               pos.y +=5;
+           }
+           else if(platforms[platformNumber].tag =="downStairs")
+           {
+               pos.y -=5;
+               go.transform.Rotate(new Vector3(0, 180, 0));
+               go.transform.position = pos;
+
+           }
+           pos.z -=10;
+           
        }
     }
 
