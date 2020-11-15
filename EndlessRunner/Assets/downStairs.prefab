@@ -915,6 +915,8 @@ GameObject:
   - component: {fileID: 9095921264216264631}
   - component: {fileID: 2130487368462329344}
   - component: {fileID: 2778656825533072289}
+  - component: {fileID: 670475425262951068}
+  - component: {fileID: 3774537750220456490}
   m_Layer: 0
   m_Name: downStairs
   m_TagString: downStairs
@@ -983,6 +985,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6021bf4caf3ca42e0b13f6a6ce13edc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &670475425262951068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095921264208985143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.09, y: 2.45, z: 1.11}
+  m_Center: {x: 0, y: 1.17, z: 4.68}
+--- !u!114 &3774537750220456490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095921264208985143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508067e58596346d6a2ed5e46a8ed6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9095921264208985145

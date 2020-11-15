@@ -1109,6 +1109,8 @@ GameObject:
   - component: {fileID: 5526518826268808224}
   - component: {fileID: 3354857457702188188}
   - component: {fileID: 4992924603823045039}
+  - component: {fileID: 6897800041753846238}
+  - component: {fileID: -6064678804175861527}
   m_Layer: 0
   m_Name: platformZSplit
   m_TagString: Spilt platform
@@ -1193,6 +1195,31 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 84f9bc7fd110d43cbbcd517cbe9bd72e, type: 3}
+--- !u!65 &6897800041753846238
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526518826278299638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.85, y: 1, z: 1.33}
+  m_Center: {x: 0, y: 0.83, z: -4.31}
+--- !u!114 &-6064678804175861527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526518826278299638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508067e58596346d6a2ed5e46a8ed6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5526518826278299640
 GameObject:
   m_ObjectHideFlags: 0
