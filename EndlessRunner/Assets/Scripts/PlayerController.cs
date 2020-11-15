@@ -5,25 +5,31 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Animator anim;
+
     public static GameObject player;
+
     public static GameObject currentPlatform;
 
-    void OnCollisionEnter(Collision other) {
-
+    void OnCollisionEnter(Collision other)
+    {
         currentPlatform = other.gameObject;
-        
     }
 
     void Start()
     {
         anim = this.GetComponent<Animator>();
         player = this.gameObject;
+        PlatformGeneration.DummyRunner();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        PlatformGeneration.DummyRunner();
     }
 
     void StopAttacking()
     {
         anim.SetBool("isAttacking", false);
-       
     }
 
     // Update is called once per frame
@@ -55,11 +61,11 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            this.transform.Translate(-5 * Time.deltaTime, 0, 0); 
+            this.transform.Translate(-5 * Time.deltaTime, 0, 0);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            this.transform.Translate(5 * Time.deltaTime, 0, 0); 
+            this.transform.Translate(5 * Time.deltaTime, 0, 0);
         }
     }
 }
