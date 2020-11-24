@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isAttacking", false);
         }
         else //right arrow
-        if (Input.GetKey(KeyCode.RightArrow) && canTurn)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && canTurn)
         {
             this.transform.Rotate(Vector3.up * 90);
             GenerateLevel.dummyTraveller.transform.forward =
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
             GenerateLevel.RunDummy();
         }
         else //left arrow
-        if (Input.GetKey(KeyCode.LeftArrow) && canTurn)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && canTurn)
         {
             this.transform.Rotate(Vector3.up * -90);
             GenerateLevel.dummyTraveller.transform.forward =
