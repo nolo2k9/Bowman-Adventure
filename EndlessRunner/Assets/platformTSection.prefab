@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3220720252393309086}
   - component: {fileID: 5915813833078515197}
   - component: {fileID: 1156749636704461642}
+  - component: {fileID: 6429986375528382590}
   m_Layer: 0
   m_Name: platformTSection
   m_TagString: T-Junction
@@ -126,6 +127,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508067e58596346d6a2ed5e46a8ed6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &6429986375528382590
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4204359522413428384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.6
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &4204359522413428386
 GameObject:
   m_ObjectHideFlags: 0

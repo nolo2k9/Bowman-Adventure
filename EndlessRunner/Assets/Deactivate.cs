@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Deactivate : MonoBehaviour
 {
+    bool dScheduled = false;
     void OnCollisionExit(Collision player) {
-        if(player.gameObject.tag =="Player")
+        if(player.gameObject.tag =="Player" && !dScheduled)
         {
-            Invoke("RemovePlatform", 3.0f);
+            Invoke("RemovePlatform", 5.0f);
+            dScheduled = true;
         }
         
     }
 
     void RemovePlatform(){
         this.gameObject.SetActive(false);
+        dScheduled = false;
     }
 }

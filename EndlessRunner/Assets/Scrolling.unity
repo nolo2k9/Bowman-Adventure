@@ -136,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 1867735988747426072, guid: 9348d75499f284264b710de3b0b85a83,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.53
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 1867735988747426072, guid: 9348d75499f284264b710de3b0b85a83,
         type: 3}
@@ -411,19 +411,19 @@ MonoBehaviour:
   - prefab: {fileID: 5526518826278299638, guid: 560f9b39e52834ecebbc2e8691a6217d,
       type: 3}
     amount: 2
-    expandable: 1
+    expandable: 0
   - prefab: {fileID: 9095921264208985143, guid: f5ea1d69bf34a47649e6e1f41bb79d21,
       type: 3}
     amount: 2
-    expandable: 1
+    expandable: 0
   - prefab: {fileID: 6882693097183106900, guid: bd31e41ac292f447dbf0e84dfbd96914,
       type: 3}
     amount: 2
-    expandable: 1
+    expandable: 0
   - prefab: {fileID: 4204359522413428384, guid: f3162e50d3349441e9e409d3112e4f77,
       type: 3}
     amount: 2
-    expandable: 1
+    expandable: 0
   pooledItems: []
 --- !u!4 &1690265943
 Transform:

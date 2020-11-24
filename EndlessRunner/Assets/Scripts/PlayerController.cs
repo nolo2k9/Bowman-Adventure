@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public static GameObject currentPlatform;
 
+    bool canTurn = false;
+
     void OnCollisionEnter(Collision other)
     {
         currentPlatform = other.gameObject;
@@ -19,12 +21,25 @@ public class PlayerController : MonoBehaviour
     {
         anim = this.GetComponent<Animator>();
         player = this.gameObject;
-        PlatformGeneration.DummyRunner();
+        GenerateLevel.RunDummy();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        PlatformGeneration.DummyRunner();
+        if (
+            other is BoxCollider &&
+            GenerateLevel.lastPlatform.tag != "T-Junction"
+        ) GenerateLevel.RunDummy();
+
+        if (other is SphereCollider)
+        {
+            canTurn = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other is SphereCollider) canTurn = false;
     }
 
     void StopAttacking()
@@ -51,21 +66,29 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isAttacking", false);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else //right arrow
+        if (Input.GetKey(KeyCode.RightArrow) && canTurn)
         {
             this.transform.Rotate(Vector3.up * 90);
+            GenerateLevel.dummyTraveller.transform.forward =
+                -this.transform.forward;
+            GenerateLevel.RunDummy();
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else //left arrow
+        if (Input.GetKey(KeyCode.LeftArrow) && canTurn)
         {
             this.transform.Rotate(Vector3.up * -90);
+            GenerateLevel.dummyTraveller.transform.forward =
+                -this.transform.forward;
+            GenerateLevel.RunDummy();
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            this.transform.Translate(-5 * Time.deltaTime, 0, 0);
+            this.transform.Translate(-5f * Time.deltaTime, 0, 0);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            this.transform.Translate(5 * Time.deltaTime, 0, 0);
+            this.transform.Translate(5f * Time.deltaTime, 0, 0);
         }
     }
 }

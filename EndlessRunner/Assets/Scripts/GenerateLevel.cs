@@ -4,43 +4,48 @@ using UnityEngine;
 
 public class GenerateLevel : MonoBehaviour
 {
-    
+    public static GameObject dummyTraveller;
 
-    GameObject dummy;
+    public static GameObject lastPlatform;
 
-    void Start()
+    void Awake()
     {
-        dummy = new GameObject("dummy");
+        dummyTraveller = new GameObject("dummy");
+    }
 
-        //Vector3 pos = new Vector3(0,0,0);
-        for (int i = 0; i < 20; i++)
+    public static void RunDummy()
+    {
+        GameObject p = Pool.singelton.GetRandom();
+        if (p == null) return;
+
+        if (lastPlatform != null)
         {
-           
-            GameObject go = Pool.singelton.GetRandom();
-            if(go ==null) return;
-            go.SetActive(true);
-            go.transform.position = dummy.transform.position;
-            go.transform.rotation = dummy.transform.rotation;
-            if (go.tag == "stairs")
-            {
-                dummy.transform.Translate(0, 5, 0);
-            }
-            else if (go.tag == "downStairs")
-            {
-                dummy.transform.Translate(0, -5, 0);
-                go.transform.Rotate(new Vector3(0, 180, 0));
-                go.transform.position = dummy.transform.position;
-            }
-            else if (go.tag == "T-Junction")
-            {
-                if (Random.Range(0, 2) == 0)
-                    dummy.transform.Rotate(new Vector3(0, 90, 0));
-                else
-                    dummy.transform.Rotate(new Vector3(0, -90, 0));
+            if (lastPlatform.tag == "T-Junction")
+                //move dummy forward by 20 from last platform
+                dummyTraveller.transform.position =
+                    lastPlatform.transform.position +
+                    PlayerController.player.transform.forward * 20;
+            else
+                //move dummy forward by 10 from last platform
+                dummyTraveller.transform.position =
+                    lastPlatform.transform.position +
+                    PlayerController.player.transform.forward * 10;
 
-                dummy.transform.Translate(Vector3.forward * -10);
+            if (lastPlatform.tag == "stairs")
+            {
+                dummyTraveller.transform.Translate(0, 5, 0);
             }
-            dummy.transform.Translate(Vector3.forward * -10);
+        }
+        lastPlatform = p;
+        p.SetActive(true);
+        p.transform.position = dummyTraveller.transform.position;
+        p.transform.rotation = dummyTraveller.transform.rotation;
+
+        if (p.tag == "downStairs")
+        {
+            dummyTraveller.transform.Translate(0, -5, 0);
+            p.transform.Rotate(0, 180, 0);
+            p.transform.position = dummyTraveller.transform.position;
         }
     }
 }
