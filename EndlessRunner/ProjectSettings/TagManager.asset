@@ -10,6 +10,7 @@ TagManager:
   - T-Junction
   - Platform
   - downStairs
+  - Fire
   layers:
   - Default
   - TransparentFX

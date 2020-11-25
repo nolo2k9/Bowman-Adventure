@@ -10,18 +10,27 @@ public class PlayerController : MonoBehaviour
 
     public static GameObject currentPlatform;
 
+    public static bool dead = false;
+
     bool canTurn = false;
+    Rigidbody rb;
+
 
     void OnCollisionEnter(Collision other)
-    {
-        currentPlatform = other.gameObject;
+    {   if(other.gameObject.tag == "Fire"){
+        anim.SetTrigger("isDead");
+        dead = true;
+    }   else
+            currentPlatform = other.gameObject;
     }
 
     void Start()
     {
         anim = this.GetComponent<Animator>();
+        rb = this.GetComponent<Rigidbody>();
         player = this.gameObject;
         GenerateLevel.RunDummy();
+       
     }
 
     void OnTriggerEnter(Collider other)
@@ -50,9 +59,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerController.dead) return;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetBool("isJumping", true);
+            rb.AddForce(Vector3.up * 200);
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
