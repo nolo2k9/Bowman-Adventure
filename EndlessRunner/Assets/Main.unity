@@ -435,6 +435,26 @@ MonoBehaviour:
   - prefab: {fileID: 867317568821216581, guid: 2d14879ad6ae54cb18623b1587b44474, type: 3}
     amount: 2
     expandable: 0
+  - prefab: {fileID: 3367525731244525082, guid: 7e23a2966774d4afa8e2e9ea036676b9,
+      type: 3}
+    amount: 2
+    expandable: 0
+  - prefab: {fileID: 6464349269848929192, guid: 6b6ddf724a55d49c18a6f0165673b80f,
+      type: 3}
+    amount: 2
+    expandable: 0
+  - prefab: {fileID: 2364501792361592336, guid: 774a01ffb6dd14c4b8d42c9bd972bca2,
+      type: 3}
+    amount: 2
+    expandable: 0
+  - prefab: {fileID: 6482989568467671518, guid: 18a009fdb3ae04449ab3a171b12aae96,
+      type: 3}
+    amount: 2
+    expandable: 0
+  - prefab: {fileID: 2465840525962876154, guid: b3d6ad55586bc4f4ba98675ac4c5aa5f,
+      type: 3}
+    amount: 2
+    expandable: 0
   pooledItems: []
 --- !u!4 &1690265943
 Transform:
