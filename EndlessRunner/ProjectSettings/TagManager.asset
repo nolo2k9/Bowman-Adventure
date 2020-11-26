@@ -11,6 +11,9 @@ TagManager:
   - Platform
   - downStairs
   - Fire
+  - Main
+  - Windows
+  - Data
   layers:
   - Default
   - TransparentFX

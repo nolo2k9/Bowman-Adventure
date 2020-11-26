@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetBool("isJumping", true);
-            rb.AddForce(Vector3.up * 200);
+            rb.AddForce(Vector3.up * Mathf.Clamp(300,300,300));
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {

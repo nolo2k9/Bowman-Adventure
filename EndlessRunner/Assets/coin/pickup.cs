@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class pickup : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //Assinging 5 points per coin
+            Data.singleton.ScoreUpdate(5);
 
-        if(other.gameObject.tag =="Player"){
-            Debug.Log("Pick-up");
+            //destory coin
             Destroy(this.gameObject);
         }
-        
     }
 }
