@@ -1,36 +1,106 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    //Animator Variable
     Animator anim;
 
+    //Player gameObject
     public static GameObject player;
 
+    //currentPlatform GameObject
     public static GameObject currentPlatform;
 
+    //Bool dead
     public static bool dead = false;
 
+    //bool can turn
     bool canTurn = false;
+
     Rigidbody rb;
 
+    // How much health is left
+    int health;
+
+    //Texture of image alive icon
+    public Texture healthIcon;
+
+    //Texture of life down icon
+    public Texture healthLost;
+
+    //Array of raw images
+    public RawImage[] healthIcons;
+
+    //Panel for when the player exhausts all livs
+    public GameObject gameOver;
+
+    //This method restarts the scene
+    void RestartScene()
+    {
+        //using scenemanager to reload the given scene
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+    }
 
     void OnCollisionEnter(Collision other)
-    {   if(other.gameObject.tag == "Fire"){
-        anim.SetTrigger("isDead");
-        dead = true;
-    }   else
+    {
+        if (other.gameObject.tag == "Fire")
+        {
+            anim.SetTrigger("isDead");
+            dead = true;
+
+            //take health from player
+            health--;
+
+            //Get new number of lives
+            PlayerPrefs.SetInt("lives", health);
+            if (health > 0)
+            {
+                //restart the scene
+                Invoke("RestartScene", 1);
+            }
+            else{
+                //the last icon 
+                healthIcons[0].texture = healthLost;
+                //setting the game over scene to show 
+                gameOver.SetActive(true);
+            }
+        }
+        else
             currentPlatform = other.gameObject;
     }
 
     void Start()
     {
+        //Animator
         anim = this.GetComponent<Animator>();
+
+        //Rigidbody
         rb = this.GetComponent<Rigidbody>();
         player = this.gameObject;
+
+        //calling the RunDummy method from GenerateLevel
         GenerateLevel.RunDummy();
-       
+
+        //setting dead back to false
+        dead = false;
+
+        //current number of lives
+        health = PlayerPrefs.GetInt("lives");
+
+        //Looping through the health icons array
+        //if i > than the current health
+        //replace the old health image with the lives lost
+        for (int i = 0; i < healthIcons.Length; i++)
+        {
+            if (i >= health)
+            {
+                healthIcons[i].texture = healthLost;
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -63,7 +133,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetBool("isJumping", true);
-            rb.AddForce(Vector3.up * Mathf.Clamp(300,300,300));
+            rb.AddForce(Vector3.up * Mathf.Clamp(300, 300, 300));
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
@@ -76,17 +146,15 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             anim.SetBool("isAttacking", false);
-        }
-        else //right arrow
-        if (Input.GetKeyDown(KeyCode.RightArrow) && canTurn)
+        } //right arrow
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && canTurn)
         {
             this.transform.Rotate(Vector3.up * 90);
             GenerateLevel.dummyTraveller.transform.forward =
                 -this.transform.forward;
             GenerateLevel.RunDummy();
-        }
-        else //left arrow
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && canTurn)
+        } //left arrow
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && canTurn)
         {
             this.transform.Rotate(Vector3.up * -90);
             GenerateLevel.dummyTraveller.transform.forward =

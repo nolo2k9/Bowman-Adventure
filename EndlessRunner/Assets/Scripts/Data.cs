@@ -21,10 +21,15 @@ public class Data : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         //this instance of singleton
         singleton = this;
+        PlayerPrefs.SetInt("score", 0);
     }
 
     public void ScoreUpdate(int s){
+        //score updates to 5 for each coin
         score += s;
+        //carrying score through deaths
+        PlayerPrefs.SetInt("score", score);
+        //if the score isnt null print the score
         if(textScore != null){
             textScore.text = "Score: " + score;
         }

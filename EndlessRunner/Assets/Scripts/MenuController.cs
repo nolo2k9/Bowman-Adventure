@@ -10,6 +10,8 @@ public class MenuController : MonoBehaviour
 
     GameObject[] panels;
 
+    int maxHealth = 3;
+
     void Start()
     {
         panels = GameObject.FindGameObjectsWithTag("Windows");
@@ -43,6 +45,7 @@ public class MenuController : MonoBehaviour
 
     public void LoadNewScene()
     {
+        PlayerPrefs.SetInt("lives", maxHealth);
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
 
