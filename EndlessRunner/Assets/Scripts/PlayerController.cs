@@ -46,10 +46,12 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Fire")
+    {   //if collision is fire and you are not dead
+        if (other.gameObject.tag == "Fire" && !dead)
         {
+            //play dead animation
             anim.SetTrigger("isDead");
+            //setting dead to true
             dead = true;
 
             //take health from player
@@ -67,11 +69,31 @@ public class PlayerController : MonoBehaviour
                 healthIcons[0].texture = healthLost;
                 //setting the game over scene to show 
                 gameOver.SetActive(true);
+                //Setting the previous score to be the players previous score
+                PlayerPrefs.SetInt("lastscore", PlayerPrefs.GetInt("score"));
+                //if PlayerPrefs contains the key Highscore
+                if(PlayerPrefs.HasKey("highscore"))
+                {   //setting hScore to be the highscore
+                    int hScore = PlayerPrefs.GetInt("highscore");
+                    //if the previous score is higher than the last highscore
+                    if(hScore < PlayerPrefs.GetInt("score")){
+                        //set the previous score to be the new highscore
+                        PlayerPrefs.SetInt("highscore", PlayerPrefs.GetInt("score"));
+                    }
+                    else {
+                           //set the previous score to be the new highscore
+                       PlayerPrefs.SetInt("highscore", hScore);
+                    }
+                      
+                }
             }
         }
-        else
+        
+        else {
             currentPlatform = other.gameObject;
-    }
+        }
+            
+    }   
 
     void Start()
     {
@@ -171,3 +193,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
+
