@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {   //if collision is fire and you are not dead
-        if (other.gameObject.tag == "Fire" && !dead)
+        if (other.gameObject.tag == "Fire" || other.gameObject.tag=="Enemy" && !dead)
         {
             //play dead animation
             anim.SetTrigger("isDead");
