@@ -8,7 +8,7 @@ public class MusicControl : MonoBehaviour
     //List containing audioSource items
     List<AudioSource> music = new List<AudioSource>();
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         //AudioSource array being set to a game object with the tag Data and getting the audio source components from that GameObject
         AudioSource[] audioSources = GameObject.FindWithTag("Data").GetComponentsInChildren<AudioSource>();

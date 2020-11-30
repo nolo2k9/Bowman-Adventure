@@ -7,6 +7,8 @@ public class Data : MonoBehaviour
 {
     public static Data singleton;
     public Text textScore = null;
+    
+
     int score = 0;
      void Awake() {
         //GameObject array to find all game objects with the given tag

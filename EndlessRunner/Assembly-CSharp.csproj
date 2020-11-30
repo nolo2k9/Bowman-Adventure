@@ -47,6 +47,7 @@
      <Compile Include="Assets\Scripts\ScoreRegister.cs" />
      <Compile Include="Assets\Scripts\Scores.cs" />
      <Compile Include="Assets\Scripts\Scroll.cs" />
+     <Compile Include="Assets\Scripts\SoundController.cs" />
      <Compile Include="Assets\coin\pickup.cs" />
      <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
     <Reference Include="UnityEngine">
