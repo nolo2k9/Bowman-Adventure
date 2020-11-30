@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
     //Panel for when the player exhausts all livs
     public GameObject gameOver;
 
+    float maxHeight = 300;
+
     //This method restarts the scene
     void RestartScene()
     {
@@ -69,6 +71,8 @@ public class PlayerController : MonoBehaviour
                 healthIcons[0].texture = healthLost;
                 //setting the game over scene to show 
                 gameOver.SetActive(true);
+                 //play dead animation
+                anim.SetTrigger("isDead");
                 //Setting the previous score to be the players previous score
                 PlayerPrefs.SetInt("lastscore", PlayerPrefs.GetInt("score"));
                 //if PlayerPrefs contains the key Highscore
@@ -113,6 +117,7 @@ public class PlayerController : MonoBehaviour
         //current number of lives
         health = PlayerPrefs.GetInt("lives");
 
+
         //Looping through the health icons array
         //if i > than the current health
         //replace the old health image with the lives lost
@@ -148,14 +153,25 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isAttacking", false);
     }
 
+    public void Attacking()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            anim.SetBool("isAttacking", true);
+        }
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
+
         if (PlayerController.dead) return;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetBool("isJumping", true);
-            rb.AddForce(Vector3.up * Mathf.Clamp(150, 150, 150));
+            rb.AddForce(transform.up * Mathf.Clamp(150, 150, 150));
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
