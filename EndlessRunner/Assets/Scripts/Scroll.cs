@@ -8,7 +8,7 @@ public class Scroll : MonoBehaviour
     {
         if(PlayerController.dead)return;
         this.transform.position +=
-            PlayerController.player.transform.forward * -0.1f;
+            PlayerController.player.transform.forward * -0.15f;
 
         if (PlayerController.currentPlatform == null) return;
         if (PlayerController.currentPlatform.tag == "stairs")
