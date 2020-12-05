@@ -37,10 +37,8 @@ public class PlayerController : MonoBehaviour
 
     //Panel for when the player exhausts all livs
     public GameObject gameOver;
-    //array of sounds
-    public static AudioSource[] sounds;
 
-    
+    float maxHeight = 300;
 
     //This method restarts the scene
     void RestartScene()
@@ -49,14 +47,9 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
 
-    void OnCollisionExit(Collision other) {
-
-        
-    }
-
     void OnCollisionEnter(Collision other)
     {   //if collision is fire and you are not dead
-        if (other.gameObject.tag == "Fire" || other.gameObject.tag=="Enemy" && !dead)
+        if (other.gameObject.tag == "Fire" || other.gameObject.tag=="Enemy" || other.gameObject.tag=="Wall" && !dead)
         {
             //play dead animation
             anim.SetTrigger("isDead");
@@ -80,8 +73,6 @@ public class PlayerController : MonoBehaviour
                 gameOver.SetActive(true);
                  //play dead animation
                 anim.SetTrigger("isDead");
-                //Play the sound in the second position of array
-                sounds[2].Play();
                 //Setting the previous score to be the players previous score
                 PlayerPrefs.SetInt("lastscore", PlayerPrefs.GetInt("score"));
                 //if PlayerPrefs contains the key Highscore
@@ -125,8 +116,6 @@ public class PlayerController : MonoBehaviour
 
         //current number of lives
         health = PlayerPrefs.GetInt("lives");
-
-        sounds = GameObject.FindWithTag("Data").GetComponentsInChildren<AudioSource>();
 
 
         //Looping through the health icons array
@@ -182,7 +171,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetBool("isJumping", true);
-            rb.AddForce(transform.up * Mathf.Clamp(100, 100, 100));
+            rb.AddForce(transform.up * Mathf.Clamp(150, 150, 150));
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {

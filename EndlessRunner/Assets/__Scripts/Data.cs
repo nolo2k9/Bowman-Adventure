@@ -9,11 +9,7 @@ public class Data : MonoBehaviour
     public Text textScore = null;
     
 
-    public int score = 0;
-    //private Scroll sc;
-
-    
-
+    int score = 0;
      void Awake() {
         //GameObject array to find all game objects with the given tag
         GameObject[] gameData = GameObject.FindGameObjectsWithTag("Data");
@@ -39,8 +35,6 @@ public class Data : MonoBehaviour
         if(textScore != null){
             textScore.text = "Score: " + score;
         }
-
-        
 
     }
 }

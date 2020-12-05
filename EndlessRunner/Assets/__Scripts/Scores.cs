@@ -10,8 +10,6 @@ public class Scores : MonoBehaviour
     //Highscore
     public Text highestScore;
 
-    
-
     void OnEnable() {
         //if PlayerPrefs contains a score
         if(PlayerPrefs.HasKey("lastScore")){
