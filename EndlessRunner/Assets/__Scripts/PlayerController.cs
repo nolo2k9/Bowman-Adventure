@@ -38,8 +38,12 @@ public class PlayerController : MonoBehaviour
     //Panel for when the player exhausts all livs
     public GameObject gameOver;
 
-    float maxHeight = 300;
+    public float jumpVelocity;
+    private bool isGrounded;
+    private float jumpAmount;
 
+
+    
     //This method restarts the scene
     void RestartScene()
     {
@@ -96,6 +100,15 @@ public class PlayerController : MonoBehaviour
         else {
             currentPlatform = other.gameObject;
         }
+
+        if (other.gameObject.tag == "Platform" || 
+        other.gameObject.tag=="Thin Platform" || 
+        other.gameObject.tag=="T-Junction" || 
+        other.gameObject.tag=="Spilt Platform"
+        ){
+             isGrounded = true;
+             jumpAmount = 0;
+         }
             
     }   
 
@@ -168,14 +181,21 @@ public class PlayerController : MonoBehaviour
 
         if (PlayerController.dead) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded ==true)
         {
+            jumpAmount -= Time.deltaTime;
+            isGrounded = false;
             anim.SetBool("isJumping", true);
-            rb.AddForce(transform.up * Mathf.Clamp(150, 150, 150));
+            rb.AddForce(0, jumpVelocity, 0);
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
             anim.SetBool("isJumping", false);
+            if(jumpAmount > 1.0f){
+                jumpAmount = 0;
+                rb.AddForce(0, -250,0);
+            }
+            
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0))
         {

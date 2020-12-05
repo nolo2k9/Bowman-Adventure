@@ -167,6 +167,11 @@ PrefabInstance:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 920387756}
+    - target: {fileID: 1867735988307702899, guid: 9348d75499f284264b710de3b0b85a83,
+        type: 3}
+      propertyPath: jumpVelocity
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 1867735988747426072, guid: 9348d75499f284264b710de3b0b85a83,
         type: 3}
       propertyPath: m_LocalPosition.x

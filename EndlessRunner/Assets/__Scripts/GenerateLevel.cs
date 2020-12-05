@@ -30,6 +30,12 @@ public class GenerateLevel : MonoBehaviour
                 dummyTraveller.transform.position =
                     lastPlatform.transform.position +
                     PlayerController.player.transform.forward * 10;
+             if (lastPlatform.tag == "Split Platform")
+                //move dummy forward by 20 from last platform
+                dummyTraveller.transform.position =
+                    lastPlatform.transform.position +
+                    PlayerController.player.transform.forward * 15;
+            else
 
             if (lastPlatform.tag == "stairs")
             {
