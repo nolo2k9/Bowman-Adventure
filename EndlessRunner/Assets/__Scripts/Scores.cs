@@ -12,9 +12,9 @@ public class Scores : MonoBehaviour
 
     void OnEnable() {
         //if PlayerPrefs contains a score
-        if(PlayerPrefs.HasKey("lastScore")){
+        if(PlayerPrefs.HasKey("lastscore")){
             //setting the previous score to be the last score saved in PlayerPrefs
-            lastScore.text = "Last Score: " + PlayerPrefs.GetInt("lastScore");
+            lastScore.text = "Last Score: " + PlayerPrefs.GetInt("lastscore");
 
         }else{
             //otherwise the last score is set to 0

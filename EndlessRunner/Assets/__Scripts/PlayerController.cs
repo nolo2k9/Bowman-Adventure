@@ -90,7 +90,8 @@ public class PlayerController : MonoBehaviour
                     }
                     else {
                            //set the previous score to be the new highscore
-                       PlayerPrefs.SetInt("highscore", hScore);
+                        //set the previous score to be the new highscore
+                        PlayerPrefs.SetInt("highscore", PlayerPrefs.GetInt("score"));
                     }
                       
                 }
