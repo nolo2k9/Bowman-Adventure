@@ -179,7 +179,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 041a96f3088e74d45be13e5c51e2b1dc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b1faddca6474d4b498bcf4d3903724cd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1185,7 +1185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &222575034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1193,18 +1193,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222575033}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1121086264}
   - {fileID: 251707774}
   m_Father: {fileID: 1655058395}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -312, y: -91}
+  m_AnchoredPosition: {x: -312, y: -91.000015}
   m_SizeDelta: {x: 160, y: 41.921356}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &222575035
@@ -2125,7 +2125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &753551514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2373,7 +2373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &815966017
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2388,7 +2388,7 @@ RectTransform:
   - {fileID: 1233062680}
   - {fileID: 1963452693}
   m_Father: {fileID: 1655058395}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3079,7 +3079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1331947695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3405,8 +3405,8 @@ RectTransform:
   m_Children:
   - {fileID: 1693745118}
   - {fileID: 1019738825}
-  - {fileID: 222575034}
   - {fileID: 815966017}
+  - {fileID: 222575034}
   - {fileID: 1331947695}
   m_Father: {fileID: 1964606005}
   m_RootOrder: 0

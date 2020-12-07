@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7839929294610001881}
   - component: {fileID: 7912035397574004675}
   - component: {fileID: 1331150345301709248}
-  - component: {fileID: 5584911912104105567}
+  - component: {fileID: 6259856351008731747}
   m_Layer: 0
   m_Name: coin
   m_TagString: Untagged
@@ -145,7 +145,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.30384365, y: 0.044373084, z: 0.3710751}
   m_Center: {x: 0.000098222015, y: 0.006694387, z: 0.0048026284}
---- !u!114 &5584911912104105567
+--- !u!114 &6259856351008731747
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GenerateLevel : MonoBehaviour
 {
@@ -8,8 +9,13 @@ public class GenerateLevel : MonoBehaviour
 
     public static GameObject lastPlatform;
 
+    public void ExitToMenu(){
+            SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+    }
+
     void Awake()
     {
+        //create dummy gameObject
         dummyTraveller = new GameObject("dummy");
     }
 
