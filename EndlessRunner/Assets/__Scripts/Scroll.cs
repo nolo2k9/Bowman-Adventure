@@ -10,6 +10,17 @@ public class Scroll : MonoBehaviour
         this.transform.position +=
             PlayerController.player.transform.forward * -0.15f;
 
+        if(PlayerPrefs.GetInt("score") > 500){
+            this.transform.position +=
+            PlayerController.player.transform.forward * -0.16f /2;
+
+        }else if(PlayerPrefs.GetInt("score") > 1000){
+            this.transform.position +=
+            PlayerController.player.transform.forward * -0.18f;
+        }else if(PlayerPrefs.GetInt("score") > 2000){
+            this.transform.position +=
+            PlayerController.player.transform.forward * -0.19f;
+        }
         if (PlayerController.currentPlatform == null) return;
         if (PlayerController.currentPlatform.tag == "stairs")
         {

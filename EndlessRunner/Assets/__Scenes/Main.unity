@@ -1314,12 +1314,10 @@ MonoBehaviour:
       type: 3}
     amount: 2
     expandable: 0
-  - prefab: {fileID: 5924059085749580064, guid: ab608e01a491943329d52d7969343023,
-      type: 3}
+  - prefab: {fileID: 94300201475965993, guid: e0aaefa1fbdcc42798abecddbf7cd3d2, type: 3}
     amount: 2
     expandable: 1
-  - prefab: {fileID: 5924059085749580064, guid: ab608e01a491943329d52d7969343023,
-      type: 3}
+  - prefab: {fileID: 94300201475965993, guid: e0aaefa1fbdcc42798abecddbf7cd3d2, type: 3}
     amount: 2
     expandable: 1
   - prefab: {fileID: 5907386599579197356, guid: 67d95bc47d1e34fd0a650647076817a2,
@@ -1329,7 +1327,7 @@ MonoBehaviour:
   - prefab: {fileID: 1756806172989910195, guid: db8d2c8214dc4466d8ee741a6274768a,
       type: 3}
     amount: 2
-    expandable: 1
+    expandable: 0
   - prefab: {fileID: 867317568821216581, guid: 2d14879ad6ae54cb18623b1587b44474, type: 3}
     amount: 2
     expandable: 1

@@ -41,7 +41,7 @@ public class GenerateLevel : MonoBehaviour
                 dummyTraveller.transform.position =
                     lastPlatform.transform.position +
                     PlayerController.player.transform.forward * 15;
-            else
+        
 
             if (lastPlatform.tag == "stairs")
             {

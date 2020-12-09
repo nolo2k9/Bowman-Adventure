@@ -52,7 +52,21 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision other)
-    {   //if collision is fire and you are not dead
+    {  
+         isGrounded = true;
+         jumpAmount = 0;
+
+         if (other.gameObject.tag == "Platform" || 
+        other.gameObject.tag=="Thin Platform" || 
+        other.gameObject.tag=="T-Junction" || 
+        other.gameObject.tag=="Spilt Platform"||
+        other.gameObject.tag == "Coin")
+        {
+             isGrounded = true;
+             jumpAmount = 0;
+         }
+        
+         //if collision is fire and you are not dead
         if (other.gameObject.tag == "Fire" || other.gameObject.tag=="Enemy" || other.gameObject.tag=="Wall" && !dead)
         {
             //play dead animation
@@ -102,14 +116,7 @@ public class PlayerController : MonoBehaviour
             currentPlatform = other.gameObject;
         }
 
-        if (other.gameObject.tag == "Platform" || 
-        other.gameObject.tag=="Thin Platform" || 
-        other.gameObject.tag=="T-Junction" || 
-        other.gameObject.tag=="Spilt Platform"
-        ){
-             isGrounded = true;
-             jumpAmount = 0;
-         }
+       
             
     }   
 
@@ -188,14 +195,15 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
             anim.SetBool("isJumping", true);
             rb.AddForce(0, jumpVelocity, 0);
+            if(jumpAmount > 1.0f){
+                jumpAmount = 0;
+                rb.AddForce(0, -500,0);
+            }
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
             anim.SetBool("isJumping", false);
-            if(jumpAmount > 1.0f){
-                jumpAmount = 0;
-                rb.AddForce(0, -250,0);
-            }
+            
             
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0))

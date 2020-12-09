@@ -16,6 +16,7 @@ public class pickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+    
             //Assinging 5 points per coin
             Data.singleton.ScoreUpdate(5);
 
