@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public float jumpVelocity;
     private bool isGrounded;
     private float jumpAmount;
+    private int hScore;
 
 
     
@@ -96,19 +97,20 @@ public class PlayerController : MonoBehaviour
                 //if PlayerPrefs contains the key Highscore
                 if(PlayerPrefs.HasKey("highscore"))
                 {   //setting hScore to be the highscore
-                    int hScore = PlayerPrefs.GetInt("highscore");
+                    hScore = PlayerPrefs.GetInt("highscore");
+                }
                     //if the previous score is higher than the last highscore
                     if(hScore < PlayerPrefs.GetInt("score")){
                         //set the previous score to be the new highscore
                         PlayerPrefs.SetInt("highscore", PlayerPrefs.GetInt("score"));
                     }
                     else {
-                           //set the previous score to be the new highscore
+                        
                         //set the previous score to be the new highscore
                         PlayerPrefs.SetInt("highscore", PlayerPrefs.GetInt("score"));
                     }
                       
-                }
+                
             }
         }
         
