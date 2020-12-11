@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class Scroll : MonoBehaviour
 {
 
-    public Text difficulty;
+    public Text message;
+
     void FixedUpdate()
     {
         if(PlayerController.dead)return;
@@ -17,21 +18,14 @@ public class Scroll : MonoBehaviour
         if(PlayerPrefs.GetInt("score") > 1000 && PlayerPrefs.GetInt("score") < 2000){
             this.transform.position +=
             PlayerController.player.transform.forward * -0.16f /2;
-            difficulty.text = "Speed increase" + "\n" + "Think Faster";
+            message.text = "Speed increase" + "\n" + "Think Faster";
 
         }else if(PlayerPrefs.GetInt("score") > 2000 ){
             this.transform.position +=
             PlayerController.player.transform.forward * -0.18f;
-            difficulty.text = "Speed increase Sick Mode";
+            message.text = "Speed increase Sick Mode";
         }
         if (PlayerController.currentPlatform == null) return;
-        if (PlayerController.currentPlatform.tag == "stairs")
-        {
-            this.transform.Translate(0, -0.06f, 0);
-        }
-        if (PlayerController.currentPlatform.tag == "downStairs")
-        {
-            this.transform.Translate(0, 0.06f, 0);
-        }
+        
     }
 }
