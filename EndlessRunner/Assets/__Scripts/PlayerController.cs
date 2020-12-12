@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private float jumpAmount;
     private int hScore;
+   
 
 
     
@@ -118,6 +119,8 @@ public class PlayerController : MonoBehaviour
             currentPlatform = other.gameObject;
         }
 
+        
+
        
             
     }   
@@ -188,6 +191,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
 
         if (PlayerController.dead) return;
 

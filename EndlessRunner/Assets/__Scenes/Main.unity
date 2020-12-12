@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: dc524c3bb6bb045be934b7da858d5f00, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: c9826d82695aa490292df3a2a4d6aecc, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -487,6 +487,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867735988747426072, guid: 9348d75499f284264b710de3b0b85a83,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8261465
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867735988747426072, guid: 9348d75499f284264b710de3b0b85a83,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.78324
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867735988747426072, guid: 9348d75499f284264b710de3b0b85a83,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.94995
       objectReference: {fileID: 0}
     - target: {fileID: 1867735988747846786, guid: 9348d75499f284264b710de3b0b85a83,
         type: 3}
@@ -3793,6 +3808,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2279898471105907890, guid: a039cb7af929e4db2bd169999a0a9c71,
         type: 3}
+      propertyPath: skyboxes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2279898471105907890, guid: a039cb7af929e4db2bd169999a0a9c71,
+        type: 3}
       propertyPath: currentDifficullty
       value: 
       objectReference: {fileID: 1175602521}
@@ -3816,6 +3836,41 @@ PrefabInstance:
       propertyPath: message
       value: 
       objectReference: {fileID: 1378827555}
+    - target: {fileID: -2279898471105907890, guid: a039cb7af929e4db2bd169999a0a9c71,
+        type: 3}
+      propertyPath: skyOne
+      value: 
+      objectReference: {fileID: 2100000, guid: 12ccb828343c3405fb94289774b51aad, type: 2}
+    - target: {fileID: -2279898471105907890, guid: a039cb7af929e4db2bd169999a0a9c71,
+        type: 3}
+      propertyPath: skyThree
+      value: 
+      objectReference: {fileID: 2100000, guid: f8a60d169ab8a46b09c9b01a3e51601f, type: 2}
+    - target: {fileID: -2279898471105907890, guid: a039cb7af929e4db2bd169999a0a9c71,
+        type: 3}
+      propertyPath: skyTwo
+      value: 
+      objectReference: {fileID: 2100000, guid: 3a253cab252a165478338fba0f03e63a, type: 2}
+    - target: {fileID: -2279898471105907890, guid: a039cb7af929e4db2bd169999a0a9c71,
+        type: 3}
+      propertyPath: skyboxes.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 12ccb828343c3405fb94289774b51aad, type: 2}
+    - target: {fileID: -2279898471105907890, guid: a039cb7af929e4db2bd169999a0a9c71,
+        type: 3}
+      propertyPath: skyboxes.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8a60d169ab8a46b09c9b01a3e51601f, type: 2}
+    - target: {fileID: -2279898471105907890, guid: a039cb7af929e4db2bd169999a0a9c71,
+        type: 3}
+      propertyPath: skyboxes.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3a253cab252a165478338fba0f03e63a, type: 2}
+    - target: {fileID: -2279898471105907890, guid: a039cb7af929e4db2bd169999a0a9c71,
+        type: 3}
+      propertyPath: skyboxes.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8426cf3d3939a7d419671f3d5c269c0b, type: 2}
     - target: {fileID: 1221794362779832839, guid: a039cb7af929e4db2bd169999a0a9c71,
         type: 3}
       propertyPath: m_LocalPosition.x
