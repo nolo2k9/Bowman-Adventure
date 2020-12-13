@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     bool canTurn = false;
 
     Rigidbody rb;
+    public static AudioSource[] sfx;
 
     // How much health is left
     int health;
@@ -58,15 +59,7 @@ public class PlayerController : MonoBehaviour
          isGrounded = true;
          jumpAmount = 0;
 
-         if (other.gameObject.tag == "Platform" || 
-        other.gameObject.tag=="Thin Platform" || 
-        other.gameObject.tag=="T-Junction" || 
-        other.gameObject.tag=="Spilt Platform"||
-        other.gameObject.tag == "Coin")
-        {
-             isGrounded = true;
-             jumpAmount = 0;
-         }
+        
         
          //if collision is fire and you are not dead
         if (other.gameObject.tag == "Fire" || other.gameObject.tag=="Enemy" || other.gameObject.tag=="Wall" && !dead)
@@ -91,8 +84,10 @@ public class PlayerController : MonoBehaviour
                 healthIcons[0].texture = healthLost;
                 //setting the game over scene to show 
                 gameOver.SetActive(true);
+                sfx[2].Play();
                  //play dead animation
                 anim.SetTrigger("isDead");
+                
                 //Setting the previous score to be the players previous score
                 PlayerPrefs.SetInt("lastscore", PlayerPrefs.GetInt("score"));
                 //if PlayerPrefs contains the key Highscore
@@ -113,6 +108,9 @@ public class PlayerController : MonoBehaviour
                       
                 
             }
+             
+            
+
         }
         
         else {
@@ -127,6 +125,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        sfx = GameObject.FindWithTag("Data").GetComponentsInChildren<AudioSource>();
         //Animator
         anim = this.GetComponent<Animator>();
 

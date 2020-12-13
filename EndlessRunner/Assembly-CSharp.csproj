@@ -49,7 +49,7 @@
      <Compile Include="Assets\__Scripts\Scores.cs" />
      <Compile Include="Assets\__Scripts\Scroll.cs" />
      <Compile Include="Assets\__Scripts\SoundController.cs" />
-     <Compile Include="Assets\coin\pickup.cs" />
+     <Compile Include="Assets\__Scripts\pickup.cs" />
      <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.11f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

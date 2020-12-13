@@ -10,6 +10,7 @@ public class Scroll : MonoBehaviour
     public Text message;
 
     public Material[] skyboxes;
+    private int fontSize = 28;
 
     private void Start()
     {
@@ -46,7 +47,7 @@ public class Scroll : MonoBehaviour
     void OnGUI()
     {
         GUI.color = Color.red;
-        GUI.skin.box.fontSize = GUI.skin.button.fontSize = 29;
+        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = fontSize;
 
         if (PlayerPrefs.GetInt("score") < 1000)
         {

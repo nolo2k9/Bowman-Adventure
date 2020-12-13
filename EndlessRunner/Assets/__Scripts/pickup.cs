@@ -19,6 +19,7 @@ public class pickup : MonoBehaviour
     
             //Assinging 5 points per coin
             Data.singleton.ScoreUpdate(5);
+            PlayerController.sfx[1].Play();
 
             //disable coin
             foreach (MeshRenderer m in mesh)
