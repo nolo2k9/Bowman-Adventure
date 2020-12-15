@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+This class handles the control of the music for the game. 
+*/
 public class MusicControl : MonoBehaviour
 {
     //List containing audioSource items

@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+This class handles the genertaion of platforms in the world. 
+The dummy travels ahead of the player and generates platforms when it reaches a certain point.
+*/
 public class GenerateLevel : MonoBehaviour
 {
+    //DummyTraveller gameObject
     public static GameObject dummyTraveller;
-
+    //previous platform gameobject
     public static GameObject lastPlatform;
 
+    //method to exit to main menu scene
     public void ExitToMenu(){
             SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 
+    //initialise dummy gameobject on awake
     void Awake()
     {
         //create dummy gameObject
@@ -21,7 +28,9 @@ public class GenerateLevel : MonoBehaviour
 
     public static void RunDummy()
     {
+        //initialise the pool
         GameObject p = Pool.singelton.GetRandom();
+        //if pool is empty return
         if (p == null) return;
 
         if (lastPlatform != null)
@@ -36,28 +45,16 @@ public class GenerateLevel : MonoBehaviour
                 dummyTraveller.transform.position =
                     lastPlatform.transform.position +
                     PlayerController.player.transform.forward * 10;
-             if (lastPlatform.tag == "Split Platform")
-                //move dummy forward by 20 from last platform
-                dummyTraveller.transform.position =
-                    lastPlatform.transform.position +
-                    PlayerController.player.transform.forward * 15;
-        
 
-            if (lastPlatform.tag == "stairs")
-            {
-                dummyTraveller.transform.Translate(0, 5, 0);
-            }
+                
         }
+        //last platform
         lastPlatform = p;
+        //activate platform
         p.SetActive(true);
+        //position rotation of p
         p.transform.position = dummyTraveller.transform.position;
         p.transform.rotation = dummyTraveller.transform.rotation;
 
-        if (p.tag == "downStairs")
-        {
-            dummyTraveller.transform.Translate(0, -5, 0);
-            p.transform.Rotate(0, 180, 0);
-            p.transform.position = dummyTraveller.transform.position;
-        }
     }
 }

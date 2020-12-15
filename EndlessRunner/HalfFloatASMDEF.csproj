@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{cd9ab30a-e62e-5ce1-4d2b-642e1651d37d}</ProjectGuid>
+    <ProjectGuid>{e68cd17a-f435-19e9-6c11-bc4caf3a0780}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>HalfFloatASMDEF</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -36,21 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\__Scripts\Data.cs" />
-     <Compile Include="Assets\__Scripts\Deactivate.cs" />
-     <Compile Include="Assets\__Scripts\GenerateLevel.cs" />
-     <Compile Include="Assets\__Scripts\MenuController.cs" />
-     <Compile Include="Assets\__Scripts\MusicControl.cs" />
-     <Compile Include="Assets\__Scripts\Patrol.cs" />
-     <Compile Include="Assets\__Scripts\PauseMenu.cs" />
-     <Compile Include="Assets\__Scripts\PlayerController.cs" />
-     <Compile Include="Assets\__Scripts\Pool.cs" />
-     <Compile Include="Assets\__Scripts\ScoreRegister.cs" />
-     <Compile Include="Assets\__Scripts\Scores.cs" />
-     <Compile Include="Assets\__Scripts\Scroll.cs" />
-     <Compile Include="Assets\__Scripts\SoundController.cs" />
-     <Compile Include="Assets\__Scripts\pickup.cs" />
-     <None Include="Assets\__Animations\Fantasy Skybox FREE\Readme.txt" />
+     <Compile Include="Assets\Photon\PhotonUtilities\Compression\HalfFloat\Half.cs" />
+     <Compile Include="Assets\Photon\PhotonUtilities\Compression\HalfFloat\HalfUtilities.cs" />
+     <None Include="Assets\Photon\PhotonUtilities\Compression\HalfFloat\HalfFloatASMDEF.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.11f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -233,6 +221,33 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.11f1/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+        <HintPath>/Applications/Unity/Hub/Editor/2019.4.11f1/Unity.app/Contents/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+        <HintPath>/Applications/Unity/Hub/Editor/2019.4.11f1/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.OSXStandalone.Extensions">
+        <HintPath>/Applications/Unity/Hub/Editor/2019.4.11f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon3Unity3D">
+        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Assets/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="QuatCompress">
+        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Assets/Photon/PhotonUtilities/TransformCrusher/plugins/QuatCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="ByteConverter">
+        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Assets/Photon/PhotonUtilities/Compression/plugins/ByteConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="HalFloat">
+        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Assets/Photon/PhotonUtilities/TransformCrusher/plugins/HalFloat.dll</HintPath>
+    </Reference>
+    <Reference Include="FloatCrusher">
+        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Assets/Photon/PhotonUtilities/TransformCrusher/plugins/FloatCrusher.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.11f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -579,32 +594,11 @@
     <Reference Include="mscorlib">
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.11f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>/Users/keithnolan/Mobile_Apps2_Project/EndlessRunner/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

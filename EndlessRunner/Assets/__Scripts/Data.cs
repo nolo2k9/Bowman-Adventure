@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+This class handles the player score behaviour. 
+*/
 public class Data : MonoBehaviour
 {
+    //Ensure lass has only a single globally accessible instance available at all times
     public static Data singleton;
+    //Text
     public Text textScore = null;
-    
 
     int score = 0;
      void Awake() {
@@ -23,6 +27,7 @@ public class Data : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         //this instance of singleton
         singleton = this;
+        //Set player score to 0 initially
         PlayerPrefs.SetInt("score", 0);
     }
 
@@ -33,6 +38,7 @@ public class Data : MonoBehaviour
         PlayerPrefs.SetInt("score", score);
         //if the score isnt null print the score
         if(textScore != null){
+            //Output
             textScore.text = "Score: " + score;
         }
 

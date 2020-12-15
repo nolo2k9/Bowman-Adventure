@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+/*
+This class handles the score registration
+*/
 public class ScoreRegister : MonoBehaviour
 {
     // Start is called before the first frame update

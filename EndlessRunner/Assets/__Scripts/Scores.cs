@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+    This class handles sets ups the score and highscore.
+*/
 public class Scores : MonoBehaviour
 {
     // Players Previous Score
